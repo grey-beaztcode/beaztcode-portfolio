@@ -324,11 +324,11 @@ footer{text-align:center;padding:2rem 1rem 3rem;color:var(--mut);font-size:.82re
 .cverify{color:var(--a);font:600 .78rem var(--mono);margin-top:.2rem}
 @media (max-width:420px){.cert{flex-direction:column;align-items:flex-start}}
 
-/* company logos on light tiles (readable on both themes) */
-.elogo{flex:none;width:84px;height:48px;padding:7px 9px;border-radius:11px;background:#fff;display:grid;place-items:center;box-shadow:0 1px 0 rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.18)}
-.elogo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-.elogo.mono{font:700 .8rem var(--mono);color:#334}
-.employers{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.emp{gap:1rem}
-.mission .elogo{width:76px;height:44px}
-@media (max-width:520px){.mission .elogo{width:60px;height:38px}}
+/* company logos: fixed slot, logo always fully contained (never cropped) */
+.elogo{flex:none;box-sizing:border-box;width:112px;height:60px;padding:9px 14px;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.16);overflow:hidden}
+.elogo img{display:block;width:100%;height:100%;object-fit:contain}
+.elogo.mono{font:700 .85rem var(--mono);color:#334}
+.employers{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.emp{gap:1rem;padding:.9rem 1.1rem}
+.mission .elogo{width:92px;height:52px;padding:7px 11px}
+@media (max-width:520px){.mission .elogo{width:72px;height:44px;padding:6px 9px}.elogo{width:92px;height:52px}}

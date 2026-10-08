@@ -423,7 +423,7 @@
   const EMP_RX = [[/edf/i, "EDF"], [/michelin/i, "Michelin"], [/atos|keolis/i, "ATOS"], [/port/i, "Port de Douala"], [/quitus/i, "Quitus"], [/we-it/i, "We-IT"]];
   function logoTile(e, fallback) {
     const t = document.createElement("span"); t.className = "elogo"; t.setAttribute("aria-hidden", "true");
-    if (e && e.logo) { const im = document.createElement("img"); im.src = e.logo; im.alt = ""; im.loading = "lazy"; im.decoding = "async"; t.append(im); }
+    if (e && e.logo) { const im = document.createElement("img"); im.src = e.logo; im.alt = ""; im.width = 112; im.height = 60; im.loading = "lazy"; im.decoding = "async"; t.append(im); }
     else { t.classList.add("mono"); t.textContent = fallback || "?"; }
     return t;
   }
