@@ -14,7 +14,7 @@ HTML / CSS / JS natifs, sans framework ni étape de build.
 - Logos de technologies : [Simple Icons](https://simpleicons.org) (`assets/logos`)
 - Logos des clients/employeurs : `assets/clients` (marques déposées de leurs propriétaires, usage de référence uniquement)
 - Badges de certification : visuels Credly (`assets/certs`), liens de vérification publics
-- Photo de profil : déposer `assets/avatar.jpg` pour remplacer le monogramme
+- Photo de profil : remplacer `assets/avatar.svg` (monogramme) par la photo dans `index.html` (`#avatarImg`)
 
 ## Lancer en local
 ```bash

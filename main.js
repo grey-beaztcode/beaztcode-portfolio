@@ -373,8 +373,6 @@
     D().kpis.forEach(([n, l]) => { const d = document.createElement("div"); const b = document.createElement("b"); b.textContent = n; const sp = document.createElement("span"); sp.textContent = l; d.append(b, sp); box.append(d); });
   }
   (() => {
-    const img = $("#avatarImg"), test = new Image();
-    test.onload = () => { img.src = "assets/avatar.jpg"; }; test.src = "assets/avatar.jpg";   // drop a photo at assets/avatar.jpg to replace the monogram
     const orbit = $("#orbit"), keys = ["java", "angular", "kubernetes", "kafka", "terraform", "aws", "docker", "grafana"];
     keys.forEach((k, i) => {
       const a = document.createElement("span"); a.className = "ob"; a.style.setProperty("--a", (360 / keys.length) * i + "deg");
