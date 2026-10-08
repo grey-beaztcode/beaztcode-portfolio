@@ -440,12 +440,21 @@
     const sec = $("#certs"), grid = $("#certGrid"); grid.textContent = "";
     const has = CERTS.length > 0; sec.hidden = !has; $("#navCerts").hidden = !has;
     $("#idxIa").textContent = has ? "06" : "05"; $("#idxLead").textContent = has ? "07" : "06"; $("#idxTerm").textContent = has ? "08" : "07";
+    const tr = (v) => (typeof v === "string" ? v : v[lang]);
     CERTS.forEach((c) => {
       const el = document.createElement(c.url ? "a" : "article"); el.className = "cert";
       if (c.url) { el.href = c.url; el.target = "_blank"; el.rel = "noopener"; }
-      const ic = document.createElement("span"); ic.className = "cicon"; c.logo ? ic.append(logoEl(c.logo)) : (ic.textContent = "★");
-      const b = document.createElement("b"); b.textContent = c.name; const s = document.createElement("small"); s.textContent = [c.issuer, c.year].filter(Boolean).join(" · ");
-      const w = document.createElement("span"); w.append(b, s); el.append(ic, w); grid.append(el);
+      const art = document.createElement("span"); art.className = "cbadge";
+      if (c.img) { const im = document.createElement("img"); im.src = c.img; im.alt = ""; im.width = 120; im.height = 120; im.loading = "lazy"; art.append(im); }
+      else if (c.logo) { art.classList.add("tile"); art.append(logoEl(c.logo)); }
+      const body = document.createElement("span"); body.className = "cbody";
+      const kind = document.createElement("small"); kind.className = "ckind"; kind.textContent = tr(c.kind);
+      const b = document.createElement("b"); b.textContent = c.name;
+      const meta = document.createElement("small"); meta.className = "cmeta"; meta.textContent = c.issuer + " · " + tr(c.date);
+      const sk = document.createElement("span"); sk.className = "cskills"; c.skills.forEach((s) => { const x = document.createElement("span"); x.textContent = tr(s); sk.append(x); });
+      body.append(kind, b, meta, sk);
+      if (c.url) { const v = document.createElement("small"); v.className = "cverify"; v.textContent = lang === "fr" ? "Vérifier sur Credly ↗" : "Verify on Credly ↗"; body.append(v); }
+      el.append(art, body); grid.append(el);
     });
   }
 

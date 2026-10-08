@@ -249,7 +249,18 @@ window.EMPLOYERS = [
   { name: "Quitus", short: "Q", color: "#8b5cf6", sub: { fr: "Paiements", en: "Payments" } }
 ];
 
-/* Certifications from the LinkedIn profile.
-   Shape: { name, issuer, year, logo (slug in LOGOS, optional), url (optional) }.
-   Empty list = the section stays hidden. */
-window.CERTS = [];
+/* Certifications. Badges link to their public Credly verification page.
+   The Kubernetes training certificate (Ambient IT) is listed as text only: the PDF carries personal data. */
+window.CERTS = [
+  { name: "Implement DevOps Workflows in Google Cloud", issuer: "Google Cloud", img: "assets/certs/gcp-devops.png",
+    kind: { fr: "Skill Badge · Intermédiaire", en: "Skill Badge · Intermediate" }, date: { fr: "Avr. 2026", en: "Apr 2026" },
+    skills: ["GKE", "CI/CD", "Cloud Source Repositories"],
+    url: "https://www.credly.com/badges/f6f54280-72f7-4981-ad0a-3217641d0a45/public_url" },
+  { name: "Set Up an App Dev Environment on Google Cloud", issuer: "Google Cloud", img: "assets/certs/gcp-appdev.png",
+    kind: { fr: "Skill Badge · Fondamental", en: "Skill Badge · Foundational" }, date: { fr: "Nov. 2025", en: "Nov 2025" },
+    skills: ["Cloud Storage", "IAM", "Cloud Functions", "Pub/Sub"],
+    url: "https://www.credly.com/badges/d5a6e3c1-174e-48c2-87be-ca3515e58028/public_url" },
+  { name: "Kubernetes", issuer: "Ambient IT", logo: "kubernetes",
+    kind: { fr: "Formation certifiée · 21 h", en: "Certified training · 21 h" }, date: { fr: "Avr. 2025", en: "Apr 2025" },
+    skills: ["kubeadm", { fr: "Haute disponibilité", en: "High availability" }, { fr: "Montée en charge automatique", en: "Autoscaling" }, "Monitoring"] }
+];
