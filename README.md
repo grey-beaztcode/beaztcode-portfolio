@@ -10,6 +10,12 @@ HTML / CSS / JS natifs, sans framework ni étape de build.
 - Animations (réseau interactif, requête qui traverse les couches, simulation d'import, terminal, easter eggs), `prefers-reduced-motion` respecté
 - CSP stricte, polices auto-hébergées, aucun traceur
 
+## Contenu
+- Logos de technologies : [Simple Icons](https://simpleicons.org) (`assets/logos`)
+- Logos des clients/employeurs : `assets/clients` (marques déposées de leurs propriétaires, usage de référence uniquement)
+- Badges de certification : visuels Credly (`assets/certs`), liens de vérification publics
+- Photo de profil : déposer `assets/avatar.jpg` pour remplacer le monogramme
+
 ## Lancer en local
 ```bash
 python3 -m http.server 4173   # puis http://localhost:4173

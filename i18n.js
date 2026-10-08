@@ -240,13 +240,13 @@ window.DATA = {
 
 /* Employers / clients shown as tiles (no trademark assets: clean typographic badges). */
 window.EMPLOYERS = [
-  { name: "We-IT", short: "WE", color: "#2ee6c5", sub: { fr: "Société de conseil", en: "Consultancy" } },
-  { name: "EDF", short: "EDF", color: "#1b6ec2", sub: { fr: "Énergie", en: "Energy" } },
-  { name: "Michelin", short: "MIC", color: "#f6c500", sub: { fr: "Pneumatique", en: "Tyres" } },
-  { name: "ATOS", short: "ATOS", color: "#0066a1", sub: { fr: "Services numériques", en: "Digital services" } },
-  { name: "Keolis", short: "KEO", color: "#e30613", sub: { fr: "Transport public", en: "Public transport" } },
-  { name: "Port de Douala", short: "PAD", color: "#0a8f8f", sub: { fr: "Portuaire", en: "Port activity" } },
-  { name: "Quitus", short: "Q", color: "#8b5cf6", sub: { fr: "Paiements", en: "Payments" } }
+  { name: "We-IT", logo: "assets/clients/weit.webp", short: "WE", color: "#2ee6c5", sub: { fr: "Société de conseil", en: "Consultancy" } },
+  { name: "EDF", logo: "assets/clients/edf.svg", short: "EDF", color: "#1b6ec2", sub: { fr: "Énergie", en: "Energy" } },
+  { name: "Michelin", logo: "assets/clients/michelin-wordmark.svg", short: "MIC", color: "#f6c500", sub: { fr: "Pneumatique", en: "Tyres" } },
+  { name: "ATOS", logo: "assets/clients/atos.svg", short: "ATOS", color: "#0066a1", sub: { fr: "Services numériques", en: "Digital services" } },
+  { name: "Keolis", logo: "assets/clients/keolis.svg", short: "KEO", color: "#e30613", sub: { fr: "Transport public", en: "Public transport" } },
+  { name: "Port de Douala", logo: "assets/clients/pad.png", short: "PAD", color: "#0a8f8f", sub: { fr: "Portuaire", en: "Port activity" } },
+  { name: "Quitus", logo: "assets/clients/quitus.png", short: "Q", color: "#8b5cf6", sub: { fr: "Paiements", en: "Payments" } }
 ];
 
 /* Certifications. Badges link to their public Credly verification page.

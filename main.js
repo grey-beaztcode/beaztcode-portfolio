@@ -421,19 +421,22 @@
 
   /* ---------- employers + certifications ---------- */
   const EMP_RX = [[/edf/i, "EDF"], [/michelin/i, "Michelin"], [/atos|keolis/i, "ATOS"], [/port/i, "Port de Douala"], [/quitus/i, "Quitus"], [/we-it/i, "We-IT"]];
+  function logoTile(e, fallback) {
+    const t = document.createElement("span"); t.className = "elogo"; t.setAttribute("aria-hidden", "true");
+    if (e && e.logo) { const im = document.createElement("img"); im.src = e.logo; im.alt = ""; im.loading = "lazy"; im.decoding = "async"; t.append(im); }
+    else { t.classList.add("mono"); t.textContent = fallback || "?"; }
+    return t;
+  }
   function employerTile(who) {
     const hit = EMP_RX.find(([rx]) => rx.test(who)); const e = hit && EMPLOYERS.find((x) => x.name === hit[1]);
-    const t = document.createElement("span"); t.className = "etile"; t.setAttribute("aria-hidden", "true");
-    t.textContent = e ? e.short : "IUT";
-    t.style.setProperty("--c", e ? e.color : "#8b5cf6"); return t;
+    return logoTile(e, "IUT");
   }
   function buildEmployers() {
     const box = $("#employers"); box.textContent = "";
     EMPLOYERS.forEach((e) => {
       const d = document.createElement("div"); d.className = "emp";
-      const t = document.createElement("span"); t.className = "etile"; t.textContent = e.short; t.style.setProperty("--c", e.color);
       const n = document.createElement("b"); n.textContent = e.name; const s = document.createElement("small"); s.textContent = e.sub[lang];
-      const w = document.createElement("span"); w.append(n, s); d.append(t, w); box.append(d);
+      const w = document.createElement("span"); w.append(n, s); d.append(logoTile(e), w); box.append(d);
     });
   }
   function buildCerts() {
