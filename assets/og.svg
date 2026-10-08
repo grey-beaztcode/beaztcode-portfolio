@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2ee6c5"/><stop offset=".6" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ffb454"/></linearGradient>
+<radialGradient id="r" cx=".8" cy=".1" r=".9"><stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#07090f"/></radialGradient></defs>
+<rect width="1200" height="630" fill="url(#r)"/>
+<g fill="none" stroke="#2ee6c5" stroke-opacity=".25" stroke-width="2"><path d="M820 80 960 200 1100 120M960 200 1040 340 900 420M1040 340 1130 470M900 420 780 520"/></g>
+<g fill="#2ee6c5"><circle cx="820" cy="80" r="7"/><circle cx="960" cy="200" r="9"/><circle cx="1100" cy="120" r="6"/><circle cx="1040" cy="340" r="9"/><circle cx="900" cy="420" r="7"/><circle cx="1130" cy="470" r="6"/><circle cx="780" cy="520" r="6"/></g>
+<text x="80" y="130" font-family="Menlo,Courier,monospace" font-size="30" fill="#93a0b8">&lt;Beaztcode/&gt;</text>
+<text x="80" y="290" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="104" fill="#e8ecf4">Je conçois.</text>
+<text x="80" y="400" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="104" fill="#e8ecf4">Je code.</text>
+<text x="80" y="510" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="104" fill="url(#g)">Je déploie.</text>
+<text x="80" y="585" font-family="Helvetica,Arial,sans-serif" font-size="30" fill="#93a0b8">Luc Grégoire Nkoussa · Lead Dev Fullstack · Java · Angular · Kafka · Kubernetes</text>
+</svg>
