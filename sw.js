@@ -3,7 +3,7 @@
    - Navigations: network-first with cached fallback, so the site works offline.
    - Static assets: stale-while-revalidate.
    - Update flow: the page shows a toast and sends SKIP_WAITING. */
-const VERSION = "v1.3.2";
+const VERSION = "v1.4.0";
 const CACHE = "beaztcode-" + VERSION;
 const SHELL = [
   "./", "index.html", "style.css", "main.js", "i18n.js", "theme.js", "manifest.webmanifest",

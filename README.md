@@ -1,5 +1,7 @@
 # Beaztcode — Portfolio (PWA)
 
+En ligne : **https://beaztcode.com** (GitHub Pages, domaine géré chez Cloudflare)
+
 Portfolio bilingue FR/EN de Luc Grégoire Nkoussa (alias **Beaztcode**), Lead Dev Fullstack.
 HTML / CSS / JS natifs, sans framework ni étape de build.
 
