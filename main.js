@@ -343,6 +343,7 @@
   addEventListener("online", () => toast(T().online));
 
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    const hadController = !!navigator.serviceWorker.controller;
     addEventListener("load", () => {
       navigator.serviceWorker.register("sw.js").then((reg) => {
         reg.addEventListener("updatefound", () => {
@@ -352,8 +353,9 @@
           });
         });
       }).catch(() => {});
+      // Reload only for a real update (a controller already existed), never on the very first install.
       let reloaded = false;
-      navigator.serviceWorker.addEventListener("controllerchange", () => { if (!reloaded) { reloaded = true; location.reload(); } });
+      navigator.serviceWorker.addEventListener("controllerchange", () => { if (hadController && !reloaded) { reloaded = true; location.reload(); } });
     });
   }
 
