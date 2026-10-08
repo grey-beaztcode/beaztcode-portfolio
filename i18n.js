@@ -1,14 +1,16 @@
 /* Translations. French is the default text in index.html (captured at load);
    EN holds the English strings for static keys. DATA holds dynamic content for both languages. */
 window.EN = {
-  nav_stack: "The stack", nav_impact: "Impact", nav_missions: "Missions", nav_ia: "AI", nav_term: "Terminal", nav_cta: "Let's talk",
+  nav_about: "About", nav_work: "Work", nav_certs: "Certifications", nav_stack: "The stack", nav_impact: "Impact", nav_missions: "Missions", nav_ia: "AI", nav_term: "Terminal", nav_cta: "Let's talk",
   eyebrow: "Fullstack Lead Dev · 8 years of experience",
   h1: 'I design.<br>I code.<br><span class="grad">I deploy.</span>',
   lead1: "From the cashier's screen to the",
   lead2: "I'm <strong>Luc Grégoire Nkoussa</strong>, a.k.a. <strong>Beaztcode</strong>: a Java / Angular developer who works on every layer, from design to infrastructure, and who helps teams grow.",
-  cta1: "Explore the stack", cta3: "Surprise ✦",
+  cta1: "See my work", cta3: "Surprise ✦",
   s1_h: "From pixel to pod",
   s1_sub: "A request crosses six layers. I work on every one of them. Click a layer, or let the request make the tour.",
+  sw_h: "Selected work", sw_sub: "What I designed, built and shipped to production. Filter by domain.",
+  sc_h: "Certifications", sc_sub: "Verified skills, not just declared ones.",
   s2_h: "Impact in numbers",
   st1: "years delivering business-critical applications",
   st2: "objects loaded in memory on every import: the bottleneck I made disappear",
@@ -92,6 +94,32 @@ window.DATA = {
         hi: ["Analyse fonctionnelle et conception technique", "Applications mobiles React Native / Android et APIs REST Spring Boot"],
         tech: ["Java 8", "Android", "React Native"] }
     ],
+    filters: { all: "Tout", backend: "Back-end", events: "Événements", data: "Données", cloud: "Cloud", devops: "DevOps", front: "Front" },
+    kpis: [["8+", "ans d'expérience"], ["3", "clouds"], ["10M+", "lignes évitées"], ["6", "couches"]],
+    works: [
+      { cat: ["data", "backend"], icon: "java", title: "Moteur d'import repensé", client: "Michelin",
+        text: "Un import qui rechargeait plus de 10 millions d'objets en mémoire à chaque exécution : saturation CPU, pods qui redémarrent. Diagnostic puis refonte du traitement (validation, persistance).",
+        metric: "Des heures → quelques minutes", logos: ["java", "spring", "kubernetes"] },
+      { cat: ["events", "cloud"], icon: "aws", title: "Import partenaires événementiel", client: "EDF",
+        text: "Dépôt S3, scan de vulnérabilités, bucket final, puis EventBridge (at-least-once) qui déclenche un CLI Java de traitement. Déploiement des Lambda en CI avec Terraform.",
+        metric: "Serverless · at-least-once", logos: ["aws", "terraform", "java"] },
+      { cat: ["devops", "backend"], icon: "kubernetes", title: "Clôtures fournisseurs sur CronJobs", client: "Michelin",
+        text: "Batchs Spring Batch orchestrés par CronJobs Kubernetes par Business Unit, avec une interface web de relance manuelle qui appelle l'API GitLab pour lancer les pipelines.",
+        metric: "Orchestration par BU", logos: ["kubernetes", "gitlab", "helm"] },
+      { cat: ["events"], icon: "kafka", title: "Migration RabbitMQ vers Kafka", client: "Michelin",
+        text: "Modernisation des flux inter-applicatifs pour supporter le multi-tenant et la consommation en temps réel.",
+        metric: "Temps réel · multi-tenant", logos: ["rabbitmq", "kafka"] },
+      { cat: ["devops"], icon: "grafana", title: "Observabilité de la plateforme", client: "Michelin",
+        text: "Collecte de métriques avec OpenTelemetry, dashboards Grafana, alerting, puis MCO et astreinte applicative sur la plateforme.",
+        metric: "Metrics · dashboards · astreinte", logos: ["opentelemetry", "grafana"] },
+      { cat: ["backend", "cloud", "front"], icon: "angular", title: "Refonte du SI logistique", client: "EDF",
+        text: "Architecture hexagonale (DDD) déployée sur AWS, front Angular 21 avec Signals dans le respect du Design System, back Spring Boot 3, TDD / BDD.",
+        metric: "Vision 2035 · DDD", logos: ["angular", "springboot", "aws"] },
+      { cat: ["front", "devops"], icon: "github", title: "Ce portfolio, en PWA", client: "Beaztcode",
+        text: "Bilingue, thème sombre automatique, installable et utilisable hors ligne, CSP stricte, sans framework. Le code est public.",
+        metric: "PWA · FR / EN · dark auto", logos: ["github", "git"], href: "https://github.com/grey-beaztcode/beaztcode-portfolio" }
+    ],
+    openRepo: "Voir le code ↗",
     agents: [["Analyste", "cadre le besoin"], ["PM", "écrit le PRD"], ["Architecte", "pose l'architecture"], ["PO", "découpe en stories"], ["Dev", "implémente la story"], ["QA", "vérifie et valide"]],
     sim: { h: "h", min: "min", note_done: "Terminé : l'import optimisé a fini bien avant l'autre, sans un seul redémarrage de pod." },
     kon: "Mode Matrix activé 🟢 (Konami !)",
@@ -164,6 +192,32 @@ window.DATA = {
         hi: ["Functional analysis and technical design", "React Native / Android mobile apps and Spring Boot REST APIs"],
         tech: ["Java 8", "Android", "React Native"] }
     ],
+    filters: { all: "All", backend: "Back end", events: "Events", data: "Data", cloud: "Cloud", devops: "DevOps", front: "Front end" },
+    kpis: [["8+", "years of experience"], ["3", "clouds"], ["10M+", "rows avoided"], ["6", "layers"]],
+    works: [
+      { cat: ["data", "backend"], icon: "java", title: "Rebuilt import engine", client: "Michelin",
+        text: "An import that reloaded more than 10 million objects into memory on every run: saturated CPU, restarting pods. Diagnosis, then a rework of the processing (validation, persistence).",
+        metric: "Hours → a few minutes", logos: ["java", "spring", "kubernetes"] },
+      { cat: ["events", "cloud"], icon: "aws", title: "Event-driven partner import", client: "EDF",
+        text: "S3 drop, vulnerability scan, final bucket, then EventBridge (at-least-once) triggering a Java CLI. Lambda deployment through CI with Terraform.",
+        metric: "Serverless · at-least-once", logos: ["aws", "terraform", "java"] },
+      { cat: ["devops", "backend"], icon: "kubernetes", title: "Supplier closings on CronJobs", client: "Michelin",
+        text: "Spring Batch jobs orchestrated by Kubernetes CronJobs per Business Unit, with a web UI for manual re-runs that calls the GitLab API to launch pipelines.",
+        metric: "Per-BU orchestration", logos: ["kubernetes", "gitlab", "helm"] },
+      { cat: ["events"], icon: "kafka", title: "RabbitMQ to Kafka migration", client: "Michelin",
+        text: "Modernising inter-application flows to support multi-tenancy and real-time consumption.",
+        metric: "Real time · multi-tenant", logos: ["rabbitmq", "kafka"] },
+      { cat: ["devops"], icon: "grafana", title: "Platform observability", client: "Michelin",
+        text: "Metrics collection with OpenTelemetry, Grafana dashboards, alerting, then run and application on-call for the platform.",
+        metric: "Metrics · dashboards · on-call", logos: ["opentelemetry", "grafana"] },
+      { cat: ["backend", "cloud", "front"], icon: "angular", title: "Logistics information system rebuild", client: "EDF",
+        text: "Hexagonal architecture (DDD) deployed on AWS, Angular 21 front end with Signals following the Design System, Spring Boot 3 back end, TDD / BDD.",
+        metric: "Vision 2035 · DDD", logos: ["angular", "springboot", "aws"] },
+      { cat: ["front", "devops"], icon: "github", title: "This portfolio, as a PWA", client: "Beaztcode",
+        text: "Bilingual, automatic dark theme, installable and offline-ready, strict CSP, no framework. The code is public.",
+        metric: "PWA · FR / EN · auto dark", logos: ["github", "git"], href: "https://github.com/grey-beaztcode/beaztcode-portfolio" }
+    ],
+    openRepo: "View the code ↗",
     agents: [["Analyst", "frames the need"], ["PM", "writes the PRD"], ["Architect", "sets the architecture"], ["PO", "slices into stories"], ["Dev", "implements the story"], ["QA", "checks and validates"]],
     sim: { h: "h", min: "min", note_done: "Done: the optimised import finished long before the other, without a single pod restart." },
     kon: "Matrix mode on 🟢 (Konami!)",
@@ -183,3 +237,19 @@ window.DATA = {
     }
   }
 };
+
+/* Employers / clients shown as tiles (no trademark assets: clean typographic badges). */
+window.EMPLOYERS = [
+  { name: "We-IT", short: "WE", color: "#2ee6c5", sub: { fr: "Société de conseil", en: "Consultancy" } },
+  { name: "EDF", short: "EDF", color: "#1b6ec2", sub: { fr: "Énergie", en: "Energy" } },
+  { name: "Michelin", short: "MIC", color: "#f6c500", sub: { fr: "Pneumatique", en: "Tyres" } },
+  { name: "ATOS", short: "ATOS", color: "#0066a1", sub: { fr: "Services numériques", en: "Digital services" } },
+  { name: "Keolis", short: "KEO", color: "#e30613", sub: { fr: "Transport public", en: "Public transport" } },
+  { name: "Port de Douala", short: "PAD", color: "#0a8f8f", sub: { fr: "Portuaire", en: "Port activity" } },
+  { name: "Quitus", short: "Q", color: "#8b5cf6", sub: { fr: "Paiements", en: "Payments" } }
+];
+
+/* Certifications from the LinkedIn profile.
+   Shape: { name, issuer, year, logo (slug in LOGOS, optional), url (optional) }.
+   Empty list = the section stays hidden. */
+window.CERTS = [];

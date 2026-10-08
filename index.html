@@ -27,26 +27,28 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Luc Grégoire Nkoussa","alternateName":"Beaztcode","jobTitle":"Lead Developer Fullstack","knowsLanguage":["fr","en"],"sameAs":["https://www.linkedin.com/in/gregoire-nkoussa-452097198/"],"knowsAbout":["Java","Spring Boot","Angular","Kafka","Kubernetes","Terraform","AWS","Azure","GCP","Hexagonal architecture","DevOps"]}
+{"@context":"https://schema.org","@type":"Person","name":"Luc Grégoire Nkoussa","alternateName":"Beaztcode","jobTitle":"Lead Developer Fullstack","knowsLanguage":["fr","en"],"sameAs":["https://www.linkedin.com/in/gregoire-nkoussa-452097198/","https://github.com/grey-beaztcode"],"knowsAbout":["Java","Spring Boot","Angular","Kafka","Kubernetes","Terraform","AWS","Azure","GCP","Hexagonal architecture","DevOps"]}
 </script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="progress" id="progress"></div>
 <canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow g1" aria-hidden="true"></div><div class="glow g2" aria-hidden="true"></div>
 <div class="matrix" id="matrix" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <noscript><p class="noscript">Beaztcode — Lead Dev Fullstack. JavaScript est nécessaire pour les animations / JavaScript is needed for animations. LinkedIn : https://www.linkedin.com/in/gregoire-nkoussa-452097198/</p></noscript>
 
 <header class="nav" id="nav">
-  <a class="logo" href="#top" aria-label="Beaztcode"><span class="lt">&lt;</span>Beaztcode<span class="lt">/&gt;</span></a>
-  <nav aria-label="Main">
-    <a href="#stack" data-i18n="nav_stack">La stack</a>
-    <a href="#impact" data-i18n="nav_impact">Impact</a>
-    <a href="#missions" data-i18n="nav_missions">Missions</a>
-    <a href="#ia" data-i18n="nav_ia">IA</a>
-    <a href="#terminal" data-i18n="nav_term">Terminal</a>
-    <a class="btn small" href="#contact" data-i18n="nav_cta">Parlons-en</a>
+  <nav class="pill" aria-label="Main">
+    <a class="logo" href="#top" aria-label="Beaztcode"><span class="lt">&lt;</span>B<span class="lt">/&gt;</span></a>
+    <a class="nl" href="#about" data-i18n="nav_about">À propos</a>
+    <a class="nl" href="#stack" data-i18n="nav_stack">La stack</a>
+    <a class="nl" href="#work" data-i18n="nav_work">Réalisations</a>
+    <a class="nl" href="#missions" data-i18n="nav_missions">Missions</a>
+    <a class="nl" href="#certs" data-i18n="nav_certs" id="navCerts">Certifications</a>
+    <a class="nl" href="#terminal" data-i18n="nav_term">Terminal</a>
+    <span class="sep" aria-hidden="true"></span>
     <button class="iconbtn" id="themeBtn" type="button" aria-label="Theme: auto" title="Theme: auto">◐</button>
     <button class="iconbtn install" id="installBtn" type="button" hidden aria-label="Install the app" title="Install">⤓</button>
     <div class="lang" role="group" aria-label="Language / Langue">
@@ -57,20 +59,31 @@
 </header>
 
 <main id="top">
-<section class="hero">
-  <p class="eyebrow reveal"><span class="dot"></span><span data-i18n="eyebrow">Lead Dev Fullstack · 8 ans d'expérience</span></p>
-  <h1 class="reveal" data-i18n-html="h1">Je conçois.<br>Je code.<br><span class="grad">Je déploie.</span></h1>
-  <p class="lead reveal"><span data-i18n="lead1">De l'écran du caissier au</span> <span class="mono hl" id="rot">pod Kubernetes</span><span class="caret">▍</span></p>
-  <p class="lead2 reveal" data-i18n-html="lead2">Je suis <strong>Luc Grégoire Nkoussa</strong>, alias <strong>Beaztcode</strong> : développeur Java / Angular qui touche à toutes les couches, de la conception à l'infrastructure, et qui fait grandir les équipes.</p>
-  <div class="cta reveal">
-    <a class="btn" href="#stack"><span data-i18n="cta1">Explorer la stack</span> <span>↓</span></a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/gregoire-nkoussa-452097198/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    <button class="btn ghost" id="surprise" type="button" data-i18n="cta3">Surprise ✦</button>
+<section class="hero" id="about">
+  <div class="herotxt">
+    <p class="eyebrow reveal"><span class="dot"></span><span data-i18n="eyebrow">Lead Dev Fullstack · 8 ans d'expérience</span></p>
+    <h1 class="reveal" data-i18n-html="h1">Je conçois.<br>Je code.<br><span class="grad">Je déploie.</span></h1>
+    <p class="lead reveal"><span data-i18n="lead1">De l'écran du caissier au</span> <span class="mono hl" id="rot">pod Kubernetes</span><span class="caret">▍</span></p>
+    <p class="lead2 reveal" data-i18n-html="lead2">Je suis <strong>Luc Grégoire Nkoussa</strong>, alias <strong>Beaztcode</strong> : développeur Java / Angular qui touche à toutes les couches, de la conception à l'infrastructure, et qui fait grandir les équipes.</p>
+    <div class="stats-inline reveal" id="heroStats"></div>
+    <div class="cta reveal">
+      <a class="btn" href="#work"><span data-i18n="cta1">Voir mes réalisations</span> <span>↓</span></a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/gregoire-nkoussa-452097198/" target="_blank" rel="noopener"><i class="lg" data-logo="linkedin"></i>LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/grey-beaztcode" target="_blank" rel="noopener"><i class="lg" data-logo="github"></i>GitHub</a>
+      <button class="btn ghost" id="surprise" type="button" data-i18n="cta3">Surprise ✦</button>
+    </div>
   </div>
-  <ul class="chips reveal" aria-label="Key technologies">
-    <li>Java 21</li><li>Spring Boot 3</li><li>Angular 21</li><li>Kafka</li><li>Kubernetes</li><li>Terraform</li><li>AWS · Azure · GCP</li><li>Claude Code</li>
-  </ul>
-  <a class="scroll" href="#stack" aria-label="Scroll">scroll</a>
+  <div class="heroart reveal" aria-hidden="true">
+    <div class="orbit" id="orbit"></div>
+    <div class="avatar"><img id="avatarImg" src="assets/avatar.svg" alt="" width="220" height="220"></div>
+    <span class="badge b1">Java 21</span><span class="badge b2">K8s</span><span class="badge b3">AI</span>
+  </div>
+  <a class="scroll" href="#marquee" aria-label="Scroll">scroll</a>
+</section>
+
+<section id="marquee" class="marquee-sec" aria-label="Technologies">
+  <div class="marquee" id="mq1"></div>
+  <div class="marquee rev" id="mq2"></div>
 </section>
 
 <section id="stack" class="sec">
@@ -117,19 +130,33 @@
   </div>
 </section>
 
+<section id="work" class="sec">
+  <h2 class="reveal"><span class="idx">03</span><span data-i18n="sw_h">Réalisations choisies</span></h2>
+  <p class="sub reveal" data-i18n="sw_sub">Ce que j'ai conçu, construit et mis en production. Filtrez par domaine.</p>
+  <div class="filters reveal" id="filters" role="group" aria-label="Filters"></div>
+  <div class="cards" id="cards"></div>
+</section>
+
 <section id="missions" class="sec">
-  <h2 class="reveal"><span class="idx">03</span><span data-i18n="s3_h">Les missions</span></h2>
+  <h2 class="reveal"><span class="idx">04</span><span data-i18n="s3_h">Les missions</span></h2>
   <p class="sub reveal" data-i18n="s3_sub">Du plus récent au plus ancien. Cliquez pour déplier.</p>
+  <div class="employers reveal" id="employers" aria-label="Clients"></div>
   <div class="timeline" id="timeline"></div>
 </section>
 
+<section id="certs" class="sec" hidden>
+  <h2 class="reveal"><span class="idx">05</span><span data-i18n="sc_h">Certifications</span></h2>
+  <p class="sub reveal" data-i18n="sc_sub">Des compétences vérifiées, pas seulement déclarées.</p>
+  <div class="certs" id="certGrid"></div>
+</section>
+
 <section id="ia" class="sec">
-  <h2 class="reveal"><span class="idx">04</span><span data-i18n="s4_h">Développement augmenté par l'IA</span></h2>
+  <h2 class="reveal"><span class="idx" id="idxIa">05</span><span data-i18n="s4_h">Développement augmenté par l'IA</span></h2>
   <p class="sub reveal" data-i18n="s4_sub">L'IA n'écrit pas à ma place : elle me donne un équipage. Je garde le cap, la revue et la responsabilité.</p>
   <div class="tools reveal">
-    <article><h3>Claude Code</h3><p data-i18n="t1">Agent de code en terminal sur toute la chaîne : code conforme à l'architecture hexagonale, tests, Liquibase, Terraform, refactoring.</p></article>
-    <article><h3>Gemini CLI</h3><p data-i18n="t2">Analyse de logs, exploration de code, documentation technique, scripts d'infrastructure.</p></article>
-    <article><h3>Junie · Copilot</h3><p data-i18n="t3">Dans IntelliJ : génération et refactoring Java / Spring, tests JUnit, compréhension du legacy.</p></article>
+    <article><h3><i class="lg" data-logo="claude"></i>Claude Code</h3><p data-i18n="t1">Agent de code en terminal sur toute la chaîne : code conforme à l'architecture hexagonale, tests, Liquibase, Terraform, refactoring.</p></article>
+    <article><h3><i class="lg" data-logo="gemini"></i>Gemini CLI</h3><p data-i18n="t2">Analyse de logs, exploration de code, documentation technique, scripts d'infrastructure.</p></article>
+    <article><h3><i class="lg" data-logo="intellij"></i><i class="lg" data-logo="copilot"></i>Junie · Copilot</h3><p data-i18n="t3">Dans IntelliJ : génération et refactoring Java / Spring, tests JUnit, compréhension du legacy.</p></article>
   </div>
   <div class="bmad reveal">
     <h3 data-i18n="bm_h">Méthode BMAD : une équipe d'agents spécialisés</h3>
@@ -139,7 +166,7 @@
 </section>
 
 <section id="lead" class="sec">
-  <h2 class="reveal"><span class="idx">05</span><span data-i18n="s5_h">Lead, pas seulement dev</span></h2>
+  <h2 class="reveal"><span class="idx" id="idxLead">06</span><span data-i18n="s5_h">Lead, pas seulement dev</span></h2>
   <div class="values">
     <article class="reveal"><span>🧭</span><h3 data-i18n="v1h">Décider</h3><p data-i18n="v1p">Force de proposition sur les choix structurants : migration RabbitMQ vers Kafka, batchs résilients sur CronJobs, architecture hexagonale, découpage serverless et événementiel.</p></article>
     <article class="reveal"><span>🤝</span><h3 data-i18n="v2h">Faire grandir</h3><p data-i18n="v2p">Pair et mob programming, revues de code, ateliers techniques : monter en compétence les développeurs plus juniors et partager les standards TDD et Clean Code.</p></article>
@@ -148,7 +175,7 @@
 </section>
 
 <section id="terminal" class="sec">
-  <h2 class="reveal"><span class="idx">06</span><span data-i18n="s6_h">Le terminal</span></h2>
+  <h2 class="reveal"><span class="idx" id="idxTerm">07</span><span data-i18n="s6_h">Le terminal</span></h2>
   <p class="sub reveal" data-i18n-html="s6_sub">Tapez <code>help</code>. Oui, c'est un vrai petit shell.</p>
   <div class="term reveal" id="term" role="application" aria-label="Terminal">
     <div class="tbar"><i></i><i></i><i></i><span>beaztcode@portfolio: ~</span></div>
@@ -160,8 +187,9 @@
 <section id="contact" class="sec contact">
   <h2 class="reveal" data-i18n="c_h">Un projet de refonte, une équipe à faire monter en puissance ?</h2>
   <p class="sub reveal" data-i18n="c_sub">Parlons architecture, qualité et mise en production.</p>
-  <div class="cta reveal center">
-    <a class="btn big" href="https://www.linkedin.com/in/gregoire-nkoussa-452097198/" target="_blank" rel="noopener" data-i18n="c_btn">Me contacter sur LinkedIn ↗</a>
+  <div class="cta center reveal">
+    <a class="btn big" href="https://www.linkedin.com/in/gregoire-nkoussa-452097198/" target="_blank" rel="noopener"><i class="lg" data-logo="linkedin"></i><span data-i18n="c_btn">Me contacter sur LinkedIn ↗</span></a>
+    <a class="btn big ghost" href="https://github.com/grey-beaztcode" target="_blank" rel="noopener"><i class="lg" data-logo="github"></i>GitHub</a>
   </div>
 </section>
 </main>
